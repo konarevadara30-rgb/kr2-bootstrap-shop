@@ -38,14 +38,15 @@ kr2-bootstrap-shop/
 │   └── custom.css
 ├── README.md
 └── .gitignore
-'''
+```text
+
 
 ## Этап 14. Коммит изменений
 
 Проверьте состояние проекта:
 
 ```bash id="rgxfx8"
-git status
+```  
 
 ## Практическая работа 10
 
