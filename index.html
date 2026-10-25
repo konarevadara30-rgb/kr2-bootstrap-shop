@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная – Bootstrap Shop</title>
-    <!-- Подключение Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Подключение собственных стилей -->
+    <title>Книжный магазин</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-
-    <!-- Шапка страницы (из ПЗ №9, Этап 4) -->
-    <header class="bg-primary text-white py-4">
+    <header class="bg-header-blue text-dark py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-8">
-                    <h1 class="h3 mb-1">Bootstrap Shop</h1>
-                    <p class="mb-0 opacity-75">Учебный интернет-магазин на Bootstrap</p>
+                    <h1 class="h3 mb-1">Bookstore</h1>
+                    <p class="mb-0 opacity-75">Интернет-библиотека для покупки книг</p>
                 </div>
                 <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
                     <span class="badge bg-light text-primary">КР №2</span>
@@ -26,32 +22,22 @@
         </div>
     </header>
 
-    <!-- Обновленная навигация с Dropdown (из ПЗ №10, Этап 4) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+            <a class="navbar-brand" href="index.html">Bookstore</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="catalog.html">Каталог</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product.html">Товар</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="order.html">Заявка</a>
-                    </li>
-                    <!-- Выпадающее меню -->
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+                    <li class="nav-item"><a class="nav-link" href="popular.html">Новинки</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Дополнительно
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Дополнительно</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
                             <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
@@ -63,100 +49,184 @@
         </div>
     </nav>
 
-    <!-- Основное содержимое -->
     <main>
-        <!-- Hero-блок (из ПЗ №9, Этап 6) -->
-        <section class="container my-5">
+        <!-- HERO: текст слева, карусель справа (по центру ячейки) -->
+        <section class="container py-5">
             <div class="row align-items-center g-4">
+                <!-- Текст слева -->
                 <div class="col-12 col-lg-6">
-                    <h2 class="display-5 fw-bold">Учебный каталог товаров на Bootstrap</h2>
+                    <h2 class="display-5 fw-bold">Каталог товаров</h2>
                     <p class="lead text-muted">
                         Проект демонстрирует использование Bootstrap-сетки, адаптивных колонок и базовых utility-классов.
                     </p>
                     <a class="btn btn-primary btn-lg" href="catalog.html">Перейти в каталог</a>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <!-- Класс placeholder-box должен быть описан в custom.css -->
-                    <div class="placeholder-box p-5 bg-light border rounded text-center">
-                        <p class="mb-0 text-muted">
-                            Здесь может быть изображение, баннер или промо-блок.
-                        </p>
+                <!-- Карусель справа, центрирована внутри своей колонки -->
+                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+                    <div id="heroCarousel" class="carousel slide hero-carousel shadow-sm" data-bs-ride="carousel">
+                        <div class="carousel-inner hero-carousel__inner">
+                            <div class="carousel-item active">
+                                <img src="images/im_1.jpg" class="d-block w-100 hero-carousel__image" alt="Товар 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/im_2.jpg" class="d-block w-100 hero-carousel__image" alt="Товар 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/im_3.jpg" class="d-block w-100 hero-carousel__image" alt="Товар 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/im_4.jpg" class="d-block w-100 hero-carousel__image" alt="Товар 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/im_5.jpg" class="d-block w-100 hero-carousel__image" alt="Товар 5">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Блок преимуществ (из ПЗ №9, Этап 7) -->
-        <section class="container my-5">
-            <h2 class="text-center mb-4">Преимущества проекта</h2>
-            <div class="row g-4">
+        <!-- Блок преимуществ -->
+        <section class="container py-5">
+            <h2 class="text-center mb-4">Почему именно мы</h2>
+            <div class="row g-4 align-items-center">
                 <div class="col-12 col-md-4">
                     <div class="p-4 border rounded h-100 bg-white">
-                        <h3 class="h5">Bootstrap-сетка</h3>
-                        <p class="mb-0 text-muted">
-                            Страница построена на 12-колоночной системе Bootstrap.
-                        </p>
+                        <h3 class="h5">Скорость</h3>
+                        <p class="mb-0 text-muted">Быстрое размещение навинок, засчет сотрудничесива с издателем</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="p-4 border rounded h-100 bg-white">
-                        <h3 class="h5">Адаптивность</h3>
-                        <p class="mb-0 text-muted">
-                            Колонки меняют ширину в зависимости от размера экрана.
-                        </p>
+                        <h3 class="h5">Качество</h3>
+                        <p class="mb-0 text-muted">Высокое качество товара</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="p-4 border rounded h-100 bg-white">
-                        <h3 class="h5">Готовая база</h3>
-                        <p class="mb-0 text-muted">
-                            Проект подготовлен к добавлению карточек, форм и модальных окон.
-                        </p>
+                        <h3 class="h5">Удобства</h3>
+                        <p class="mb-0 text-muted">Быстрая и удобная доставка по всех России</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border rounded h-100 bg-white">
+                        <h3 class="h5">Надежность</h3>
+                        <p class="mb-0 text-muted">В случае неполадок мы обязательно свяжемся с вами</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Сетка популярных товаров (из ПЗ №9, Этап 8) -->
-        <!-- Добавлен id="popular" для работы ссылки из выпадающего меню -->
-        <section class="container my-5" id="popular">
+        <!-- НОВИНКИ СЕГОДНЯ — бейджи как в каталоге -->
+        <section class="container py-5" id="popular">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="mb-0">Популярные товары</h2>
+                <h2 class="mb-0">Новинки сегодня</h2>
                 <a class="btn btn-outline-primary" href="catalog.html">Все товары</a>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 align-items-center">
+
+                <!-- Хит продаж -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4 bg-white">
-                        <span class="badge bg-success mb-3">Новинка</span>
-                        <h3 class="h5">Товар 1</h3>
-                        <p class="text-muted">Краткое описание учебного товара.</p>
-                        <p class="fw-bold mb-3">1000 руб.</p>
-                        <a class="btn btn-primary" href="product.html">Подробнее</a>
+                    <div class="card h-100 shadow-sm py-5 d-flex align-items-center">
+                        <img src="images/im_1.jpg" class="card-img-top" alt="Товар 1">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h2 class="card-title h5">Введение в психоанализ</h2>
+                                <span class="badge bg-warning text-dark">Хит продаж</span>
+                            </div>
+                            <p class="card-text text-muted">Цикл лекций об ошибочных действиях, снах и неврозах — базовое введение в психоанализ. Важная классика, но стиль тяжеловат, а часть идей устарела. Для знакомства с основами, не для лёгкого чтения. 4/5</p>
+                            <p class="fw-bold mb-3 mt-auto">1000 руб.</p>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-primary" href="product.html?id=1">Подробнее</a>
+                                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Акция: цена уменьшается на 100 ₽ скриптом -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4 bg-white">
-                        <span class="badge bg-warning text-dark mb-3">Хит</span>
-                        <h3 class="h5">Товар 2</h3>
-                        <p class="text-muted">Краткое описание учебного товара.</p>
-                        <p class="fw-bold mb-3">1500 руб.</p>
-                        <a class="btn btn-primary" href="product.html">Подробнее</a>
+                    <div class="card h-100 shadow-sm py-5 d-flex align-items-center">
+                        <img src="images/im_5.jpg" class="card-img-top" alt="Товар 2">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h2 class="card-title h5">Чужак</h2>
+                                <span class="badge bg-danger">Акция</span>
+                            </div>
+                            <p class="card-text text-muted">Детектив расследует жестокое убийство мальчика, все улики против уважаемого учителя — но у того железное алиби. Книга начинается как реалистичный триллер, а затем уходит в мистику и становится тяжёлой историей о том, как рушится жизнь невиновного. Первая половина читается на одном дыхании, вторая местами провисает. Кому: поклонникам Кинга и любителям мистических детективов. 4/5</p>
+                            <p class="fw-bold mb-3 mt-auto" id="promo-price" data-original="1200">1200 руб.</p>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-primary" href="product.html?id=5">Подробнее</a>
+                                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Рекомендуем -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4 bg-white">
-                        <span class="badge bg-danger mb-3">Скидка</span>
-                        <h3 class="h5">Товар 3</h3>
-                        <p class="text-muted">Краткое описание учебного товара.</p>
-                        <p class="fw-bold mb-3">2000 руб.</p>
-                        <a class="btn btn-primary" href="product.html">Подробнее</a>
+                    <div class="card h-100 shadow-sm py-5 d-flex align-items-center">
+                        <img src="images/im_6.jpg" class="card-img-top" alt="Товар 3">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h2 class="card-title h5">Царь-рыба</h2>
+                                <span class="badge bg-success">Рекомендуем</span>
+                            </div>
+                            <p class="card-text text-muted">Цикл рассказов о сибирской тайге и людях, которые живут в ней по своим законам. Главная тема — потребительское отношение человека к природе: браконьер Игнатьич ловит огромного осетра и, оказавшись на грани жизни и смерти, переосмысливает свою жизнь. Местами жёстко и тяжело, но очень сильно и честно. Кому: любителям деревенской и философской прозы. 4/5</p>
+                            <p class="fw-bold mb-3 mt-auto">1800 руб.</p>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-primary" href="product.html?id=6">Подробнее</a>
+                                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <!-- Подвал (из ПЗ №9, Этап 9) -->
+    <!-- Модальное окно (для кнопок «Заказать») -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="orderModalLabel">Быстрая заявка</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Оставьте контактные данные, и менеджер свяжется с вами.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="modal-name-home" class="form-label">Имя</label>
+                            <input id="modal-name-home" type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-phone-home" class="form-label">Телефон</label>
+                            <input id="modal-phone-home" type="tel" class="form-control" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input id="modal-agree-home" class="form-check-input" type="checkbox" required>
+                            <label class="form-check-label" for="modal-agree-home">Согласен на обработку данных</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row align-items-center g-3">
@@ -171,7 +241,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (Необходим для работы мобильного меню и dropdown) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

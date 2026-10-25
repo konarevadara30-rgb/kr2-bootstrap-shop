@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог – Bootstrap Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="bg-light">
-
-    <!-- Общая навигация -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
@@ -18,18 +16,12 @@
             </button>
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product.html">Товар</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="order.html">Заявка</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+                    <li class="nav-item"><a class="nav-link" href="popular.html">Популярное</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Дополнительно
@@ -45,7 +37,6 @@
         </div>
     </nav>
 
-    <!-- Основное содержимое -->
     <main class="container my-5">
         <div class="alert alert-info" role="alert">
             Выберите товар из каталога. Карточки товаров оформлены с помощью компонента Bootstrap <code>card</code>.
@@ -56,10 +47,15 @@
             <a class="btn btn-outline-primary" href="order.html">Оставить заявку</a>
         </div>
 
+        <!-- ОДИН .row на весь каталог — все карточки внутри -->
         <div class="row g-4">
-            <!-- Карточка 1 -->
+
+            <!-- Товар 1 -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_1.jpg" class="card-img-top" alt="Товар 1" loading="lazy" width="400" height="300">
+                    </div>
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h2 class="card-title h5">Товар 1</h2>
@@ -75,9 +71,12 @@
                 </div>
             </div>
 
-            <!-- Карточка 2 -->
+            <!-- Товар 2 -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_2.jpg" class="card-img-top" alt="Товар 2" loading="lazy" width="400" height="300">
+                    </div>
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h2 class="card-title h5">Товар 2</h2>
@@ -93,9 +92,12 @@
                 </div>
             </div>
 
-            <!-- Карточка 3 -->
+            <!-- Товар 3 -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_3.jpg" class="card-img-top" alt="Товар 3" loading="lazy" width="400" height="300">
+                    </div>
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h2 class="card-title h5">Товар 3</h2>
@@ -110,41 +112,200 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Дополнительный компонент Accordion (Частые вопросы) -->
-        <section class="mt-5">
-            <h2 class="h4 mb-3">Частые вопросы</h2>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
-                            Можно ли оформить заявку без регистрации?
-                        </button>
-                    </h3>
-                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Да, в учебном проекте заявка оформляется без регистрации.
-                        </div>
+            <!-- Товар 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_4.jpg" class="card-img-top" alt="Товар 4" loading="lazy" width="400" height="300">
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
-                            Где используется Bootstrap?
-                        </button>
-                    </h3>
-                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Bootstrap используется для сетки, карточек, форм, навигации, сообщений и модальных окон.
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 4</h2>
+                            <span class="badge bg-success">Новинка</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание четвёртого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">1200 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Товар 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_5.jpg" class="card-img-top" alt="Товар 5" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 5</h2>
+                            <span class="badge bg-warning text-dark">Хит</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание пятого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">1800 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_6.jpg" class="card-img-top" alt="Товар 6" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 6</h2>
+                            <span class="badge bg-danger">Скидка</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание шестого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">2400 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 7 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_7.jpg" class="card-img-top" alt="Товар 7" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 7</h2>
+                            <span class="badge bg-success">Новинка</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание седьмого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">900 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 8 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_8.jpg" class="card-img-top" alt="Товар 8" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 8</h2>
+                            <span class="badge bg-warning text-dark">Хит</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание восьмого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">1300 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 9 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_9.jpg" class="card-img-top" alt="Товар 9" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 9</h2>
+                            <span class="badge bg-danger">Скидка</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание девятого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">2100 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 10 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_10.jpg" class="card-img-top" alt="Товар 10" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 10</h2>
+                            <span class="badge bg-success">Новинка</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание десятого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">1700 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 11 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_11.jpg" class="card-img-top" alt="Товар 11" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 11</h2>
+                            <span class="badge bg-warning text-dark">Хит</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание одиннадцатого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">2500 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 12 (фото im_1 повторно — замените, если есть im_12) -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-wrap">
+                        <img src="images/im_1.jpg" class="card-img-top" alt="Товар 12" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h2 class="card-title h5">Товар 12</h2>
+                            <span class="badge bg-danger">Скидка</span>
+                        </div>
+                        <p class="card-text text-muted">Краткое описание двенадцатого учебного товара.</p>
+                        <p class="fw-bold fs-5 mt-auto">1100 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.row -->
     </main>
 
-    <!-- Модальное окно (Заказ) -->
+    <!-- Модальное окно -->
     <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -177,7 +338,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
