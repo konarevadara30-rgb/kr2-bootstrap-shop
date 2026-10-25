@@ -38,6 +38,7 @@ kr2-bootstrap-shop/
 │   └── custom.css
 ├── README.md
 └── .gitignore
+'''
 
 ## Этап 14. Коммит изменений
 
